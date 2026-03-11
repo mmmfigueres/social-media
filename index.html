@@ -5,29 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MMM Figueres - Enlaces Oficiales</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
     <style>
-        /* CSS - Estilo Minimalista y Moderno */
+        :root {
+            --primary-color: #2c3e50; 
+            --accent-color: #3498db;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #000000;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: #222;
             margin: 0;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            overflow-x: hidden;
         }
 
         header {
-            padding: 20px;
+            padding: 20px 40px;
             text-align: right;
-            border-bottom: 1px solid #f0f0f0;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255,255,255,0.3);
         }
 
         .header-tag {
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: #999999;
+            color: var(--primary-color);
+            font-weight: bold;
         }
 
         .main-content {
@@ -40,94 +52,133 @@
 
         .container {
             text-align: center;
-            max-width: 400px;
+            max-width: 420px;
             width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .container.visible {
+            transform: translateY(0);
+            opacity: 1;
         }
 
         .logo {
-            width: 130px;
-            height: auto;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: rotate(5deg) scale(1.05);
         }
 
         h1 {
-            font-size: 1.6rem;
-            margin-bottom: 8px;
-            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
         }
 
         .description {
-            font-size: 0.95rem;
-            color: #666666;
-            margin-bottom: 35px;
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 30px;
             line-height: 1.6;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 15px;
         }
 
         .link-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 14px;
+            padding: 16px;
             text-decoration: none;
-            color: #000000;
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            font-weight: 500;
+            color: #333;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-radius: 15px;
+            font-weight: 600;
             gap: 12px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
-        .link-card i {
-            font-size: 1.1rem;
-            width: 20px;
+        .link-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(45deg);
+            transition: 0.5s;
+            pointer-events: none;
+        }
+
+        .link-card:hover::after {
+            left: 120%;
         }
 
         .link-card:hover {
-            background-color: #000000;
-            color: #ffffff;
-            border-color: #000000;
-            transform: translateY(-2px);
+            background-color: var(--primary-color);
+            color: #fff !important;
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        /* Diferenciación de teléfonos */
-        .phone-primary { background-color: #ffffff; }
-        .phone-secondary { color: #777; border-style: dashed; }
+        .instagram:hover { background-color: #E1306C !important; }
+        .facebook:hover { background-color: #1877F2 !important; }
+        .email:hover { background-color: #f39c12 !important; }
+
+        .phone-primary { border: 2px solid var(--accent-color); }
+        .phone-secondary { opacity: 0.8; }
 
         .contact-info {
-            margin-top: 45px;
-            font-size: 0.85rem;
-            color: #888888;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
         }
 
-        .contact-info p { margin: 8px 0; }
-        
         #email-text {
-            color: #000;
-            text-decoration: underline;
-            text-underline-offset: 3px;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 5px 15px;
+            background: #f0f0f0;
+            border-radius: 20px;
             cursor: pointer;
+            transition: 0.3s;
         }
+
+        #email-text:hover { background: #e0e0e0; }
 
         footer {
-            padding: 30px;
+            padding: 25px;
             text-align: center;
-            font-size: 0.75rem;
-            color: #bbbbbb;
-            border-top: 1px solid #f9f9f9;
+            font-size: 0.8rem;
+            color: #555;
+            background: rgba(255,255,255,0.3);
         }
 
         .copy-feedback {
-            font-size: 0.7rem;
             color: #27ae60;
             display: none;
+            font-weight: bold;
             margin-top: 5px;
         }
     </style>
@@ -135,53 +186,67 @@
 <body>
 
     <header>
-        <span class="header-tag">Oficial Linktree</span>
+        <span class="header-tag animate__animated animate__fadeInRight">MMM Figueres</span>
     </header>
 
     <main class="main-content">
-        <div class="container">
-            <img src="ESPAÑA (1).png" alt="Logo MMM Figueres" class="logo">
+        <div class="container" id="mainContainer">
+            <img src="ESPAÑA (1).png" alt="Logo MMM Figueres" class="logo animate__animated animate__pulse animate__infinite">
 
-            <h1>MMM Figueres</h1>
-            <p class="description">
-                Un lugar para encontrar esperanza. <br>
-                Movimiento Misionero Mundial en Figueres.
+            <h1 class="animate__animated animate__fadeInDown">MMM Figueres</h1>
+            <p class="description animate__animated animate__fadeIn">
+                Evangelizando al mundo para Cristo. <br>
+                <strong>Unidos por la fe en Figueres.</strong>
             </p>
 
             <div class="links-container">
-                <a href="https://www.instagram.com/mmmfigueres" target="_blank" class="link-card">
+                <a href="https://www.instagram.com/mmmfigueres" target="_blank" class="link-card instagram" style="--d: 0.1s">
                     <i class="fab fa-instagram"></i> Instagram
                 </a>
-                <a href="#" target="_blank" class="link-card">
-                    <i class="fab fa-facebook-f"></i> Facebook (Próximamente)
+                <a href="#" target="_blank" class="link-card facebook" style="--d: 0.2s">
+                    <i class="fab fa-facebook-f"></i> Facebook
                 </a>
-                
-                <a href="mailto:iglesiammmfigueres@gmail.com" class="link-card">
-                    <i class="far fa-envelope"></i> Enviar Email
+                <a href="mailto:iglesiammmfigueres@gmail.com" class="link-card email" style="--d: 0.3s">
+                    <i class="far fa-envelope"></i> Nuestro Correo
                 </a>
-
-                <a href="tel:+34655646518" class="link-card phone-primary">
+                <a href="tel:+34655646518" class="link-card phone-primary" style="--d: 0.4s">
                     <i class="fas fa-phone-alt"></i> Teléfono Principal
                 </a>
-                <a href="tel:+34661102232" class="link-card phone-secondary">
-                    <i class="fas fa-phone"></i> Teléfono Secundario
+                <a href="tel:+34661102232" class="link-card phone-secondary" style="--d: 0.5s">
+                    <i class="fas fa-phone-slash"></i> Teléfono Alternativo
                 </a>
             </div>
 
             <div class="contact-info">
-                <p><i class="fas fa-map-marker-alt"></i> Figueres, España</p>
-                <p id="email-text">iglesiammmfigueres@gmail.com</p>
-                <p id="copy-msg" class="copy-feedback"><i class="fas fa-check"></i> ¡Copiado!</p>
+                <p><i class="fas fa-location-dot"></i> Figueres, Girona</p>
+                <div id="email-text">iglesiammmfigueres@gmail.com</div>
+                <p id="copy-msg" class="copy-feedback">¡Copiado con éxito!</p>
             </div>
         </div>
     </main>
 
     <footer>
         &copy; 2026 Movimiento Misionero Mundial Figueres <br>
-        Llevando el evangelio a toda criatura.
+        <small>Impacto Evangelístico Mundial</small>
     </footer>
 
     <script>
+        window.addEventListener('load', () => {
+            const container = document.getElementById('mainContainer');
+            container.classList.add('visible');
+
+            const cards = document.querySelectorAll('.link-card');
+            cards.forEach((card, index) => {
+                card.style.opacity = "0";
+                card.style.transform = "translateX(-20px)";
+                setTimeout(() => {
+                    card.style.transition = "all 0.5s ease";
+                    card.style.opacity = "1";
+                    card.style.transform = "translateX(0)";
+                }, 200 + (index * 150));
+            });
+        });
+
         const emailP = document.getElementById('email-text');
         const msg = document.getElementById('copy-msg');
 
@@ -189,7 +254,11 @@
             const text = emailP.innerText;
             navigator.clipboard.writeText(text).then(() => {
                 msg.style.display = 'block';
-                setTimeout(() => { msg.style.display = 'none'; }, 2000);
+                msg.classList.add('animate__animated', 'animate__bounceIn');
+                setTimeout(() => { 
+                    msg.classList.replace('animate__bounceIn', 'animate__fadeOut');
+                    setTimeout(() => { msg.style.display = 'none'; msg.classList.remove('animate__fadeOut'); }, 500);
+                }, 2000);
             });
         });
     </script>
