@@ -3,19 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMM Figueres - Enlaces</title>
+    <title>MMM Figueres - Enlaces Oficiales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        /* CSS - Estilo Minimalista */
+        /* CSS - Estilo Minimalista y Moderno */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #ffffff;
             color: #000000;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            padding: 20px;
+            text-align: right;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .header-tag {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #999999;
+        }
+
+        .main-content {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         .container {
@@ -25,102 +45,146 @@
         }
 
         .logo {
-            width: 120px;
+            width: 130px;
             height: auto;
             border-radius: 50%;
             margin-bottom: 20px;
-            /* Placeholder gris si no hay imagen */
-            background-color: #f0f0f0; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         h1 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            font-weight: 600;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
 
         .description {
             font-size: 0.95rem;
-            color: #666666; /* Gris para info secundaria */
-            margin-bottom: 30px;
-            line-height: 1.5;
+            color: #666666;
+            margin-bottom: 35px;
+            line-height: 1.6;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .link-card {
-            display: block;
-            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
             text-decoration: none;
             color: #000000;
             border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-weight: 500;
+            gap: 12px;
+        }
+
+        .link-card i {
+            font-size: 1.1rem;
+            width: 20px;
         }
 
         .link-card:hover {
             background-color: #000000;
             color: #ffffff;
             border-color: #000000;
+            transform: translateY(-2px);
         }
+
+        /* Diferenciación de teléfonos */
+        .phone-primary { background-color: #ffffff; }
+        .phone-secondary { color: #777; border-style: dashed; }
 
         .contact-info {
-            margin-top: 40px;
+            margin-top: 45px;
             font-size: 0.85rem;
-            color: #999999; /* Gris claro para detalles */
+            color: #888888;
         }
 
-        .contact-info p {
-            margin: 5px 0;
+        .contact-info p { margin: 8px 0; }
+        
+        #email-text {
+            color: #000;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            cursor: pointer;
         }
 
-        /* JavaScript para interactividad simple */
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #bbbbbb;
+            border-top: 1px solid #f9f9f9;
+        }
+
         .copy-feedback {
             font-size: 0.7rem;
             color: #27ae60;
             display: none;
+            margin-top: 5px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <img src="ESPAÑA (1).png" alt="Logo MMM Figueres" class="logo">
+    <header>
+        <span class="header-tag">Oficial Linktree</span>
+    </header>
 
-        <h1>MMM Figueres</h1>
-        <p class="description">
-            Bienvenidos a la página oficial del Movimiento Misionero Mundial en Figueres. 
-            Trabajando por la evangelización y la obra de Dios.
-        </p>
+    <main class="main-content">
+        <div class="container">
+            <img src="ESPAÑA (1).png" alt="Logo MMM Figueres" class="logo">
 
-        <div class="links-container">
-            <a href="https://www.instagram.com/TU_USUARIO" target="_blank" class="link-card">Instagram</a>
-            <a href="https://www.facebook.com/TU_USUARIO" target="_blank" class="link-card">Facebook</a>
-            
-            <a href="mailto:iglesiammmfigueres@gmail.com" class="link-card">Enviar Email</a>
-            <a href="tel:+34655646518" class="link-card">Llamar Ahora (1)</a>
-            <a href="tel:+34661102232" class="link-card">Llamar Ahora (1)</a>
+            <h1>MMM Figueres</h1>
+            <p class="description">
+                Un lugar para encontrar esperanza. <br>
+                Movimiento Misionero Mundial en Figueres.
+            </p>
+
+            <div class="links-container">
+                <a href="https://www.instagram.com/mmmfigueres" target="_blank" class="link-card">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="#" target="_blank" class="link-card">
+                    <i class="fab fa-facebook-f"></i> Facebook (Próximamente)
+                </a>
+                
+                <a href="mailto:iglesiammmfigueres@gmail.com" class="link-card">
+                    <i class="far fa-envelope"></i> Enviar Email
+                </a>
+
+                <a href="tel:+34655646518" class="link-card phone-primary">
+                    <i class="fas fa-phone-alt"></i> Teléfono Principal
+                </a>
+                <a href="tel:+34661102232" class="link-card phone-secondary">
+                    <i class="fas fa-phone"></i> Teléfono Secundario
+                </a>
+            </div>
+
+            <div class="contact-info">
+                <p><i class="fas fa-map-marker-alt"></i> Figueres, España</p>
+                <p id="email-text">iglesiammmfigueres@gmail.com</p>
+                <p id="copy-msg" class="copy-feedback"><i class="fas fa-check"></i> ¡Copiado!</p>
+            </div>
         </div>
+    </main>
 
-        <div class="contact-info">
-            <p>Figueres, España</p>
-            <p id="email-text">iglesiammmfigueres@gmail.com</p>
-            <p>+34 055 646 518 // +34 661 022 232</p>
-            <p id="copy-msg" class="copy-feedback">¡Copiado al portapapeles!</p>
-        </div>
-    </div>
+    <footer>
+        &copy; 2024 Movimiento Misionero Mundial Figueres <br>
+        Llevando el evangelio a toda criatura.
+    </footer>
 
     <script>
-        // Pequeño script para copiar el email al hacer clic
         const emailP = document.getElementById('email-text');
         const msg = document.getElementById('copy-msg');
 
-        emailP.style.cursor = 'pointer';
         emailP.addEventListener('click', () => {
             const text = emailP.innerText;
             navigator.clipboard.writeText(text).then(() => {
